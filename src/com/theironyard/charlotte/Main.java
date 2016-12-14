@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         fizzBuzz();
-        fibSeq(9);
+        System.out.println(Arrays.toString(fibSeq(9)));
         System.out.println(boost(345));
     }
 
@@ -19,7 +19,7 @@ public class Main {
             } else if (i % 3 == 0 && i % 5 == 0) {
                 System.out.println("FizzBuzz");
             } else {
-                System.out.println(i);
+                System.out.println(String.valueOf(i));
             }
     }
 
@@ -30,7 +30,6 @@ public class Main {
         for (int i = 2; i < x; i++) {
             fib[i] = fib[i - 1] + fib[i - 2];
         }
-        System.out.print(Arrays.toString(fib));
         return fib;
     }
 
@@ -38,8 +37,8 @@ public class Main {
 
         String valueX = Integer.toString(x);
 
-        Integer [] digitsX = new Integer[valueX.length()];
-        for (Integer i = (valueX.length()-1); i >=0; i--) {
+        Integer[] digitsX = new Integer[valueX.length()];
+        for (Integer i = (valueX.length() - 1); i >= 0; i--) {
             digitsX[i] = x % 10;
             x = x / 10;
             if (i == 9) {

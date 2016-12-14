@@ -13,10 +13,12 @@ public class Main {
         fizzBuzz();
         fibonacciSequence(6);
         System.out.println("----------------------");
+        boost(569);
 
-        System.out.println(Arrays.toString(boost(567)));
-        int[] boostNumer = boost(4256);
-        System.out.println(Arrays.toString(boostNumer));
+        //System.out.println(Arrays.toString(boost(567)));
+
+        //int[] boostNumer = boost(4256);
+        //System.out.println(Arrays.toString(boostNumer));
 
 
     }
@@ -51,9 +53,8 @@ public class Main {
         for (int a = 2; a < x; a++) {
             fib[a] = fib[a - 1] + fib[a - 2];
         }
-        System.out.println(Arrays.toString(fib).replace("[ , ]", ""));
 
-
+        System.out.println(Arrays.toString(fib));
         return fib;
 
     }
@@ -67,7 +68,7 @@ public class Main {
         //put the indiviudal int together and print it out
 
         String passedA = Integer.toString(a);
-        System.out.println(passedA);
+        System.out.println("number that is passed " + passedA);
         int[] number = new int[passedA.length()];
 
 
@@ -83,7 +84,14 @@ public class Main {
                 number[i] += 1;
             }
         }
+
+        for (int built : number)
+
+            System.out.print(built);
+
+
         return number;
+
     }
 
 }

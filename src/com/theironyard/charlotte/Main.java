@@ -11,15 +11,11 @@ public class Main {
     public static void main(String[] args) {
 
         fizzBuzz();
+        int[] fibonacciSequenceNumber = fibonacciSequence(6);
+        System.out.println(Arrays.toString(fibonacciSequenceNumber));
         fibonacciSequence(6);
         System.out.println("----------------------");
         boost(569);
-
-        //System.out.println(Arrays.toString(boost(567)));
-
-        //int[] boostNumer = boost(4256);
-        //System.out.println(Arrays.toString(boostNumer));
-
 
     }
 
@@ -54,12 +50,12 @@ public class Main {
             fib[a] = fib[a - 1] + fib[a - 2];
         }
 
-        System.out.println(Arrays.toString(fib));
+        //System.out.println(Arrays.toString(fib));
         return fib;
 
     }
 
-    public static int[] boost(int a) {
+    public static void boost(int a) {
 
         // take the number from the user
         //use the integer.toString to convert the into to string
@@ -71,7 +67,10 @@ public class Main {
         System.out.println("number that is passed " + passedA);
         int[] number = new int[passedA.length()];
 
-
+        // we need to minus oen from the length of array becasue we need to take away one from the lenth - array index
+        // starts at 0
+        //we need to include 0 so the the index of array can be counted
+        //i-- going back wards
         for (int i = (passedA.length() - 1); i >= 0; i--) {
 
             number[i] = a % 10;
@@ -86,12 +85,7 @@ public class Main {
         }
 
         for (int built : number)
-
             System.out.print(built);
-
-
-        return number;
-
     }
 
 }

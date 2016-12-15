@@ -62,8 +62,9 @@ public class Main {
     public static int boost(int n) {
         int digitCount = Integer.toString(n).length();
         int[] result = new int[digitCount];
-        while (digitCount-- > 0) {
+        while (digitCount > 0) {
             int temp;
+            digitCount--;
             temp = n % 10;
             if (temp == 9) {
                 result[digitCount] = 0;
@@ -73,6 +74,7 @@ public class Main {
                 n /= 10;
             }
         }
+        digitCount--;
         return Integer.parseInt(Arrays.toString(result).replaceAll("\\D+", ""));
 
     }

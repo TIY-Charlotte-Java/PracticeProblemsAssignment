@@ -12,25 +12,20 @@ public class Main {
         System.out.println(boost(123));
     }
 
-    //For each number 1-100 inclusive, print out a value based off the current number.
-    //If the value is evenly divisible by 3, print "Fizz"
-    public static void fizzBuzz() {
 
-        for (Integer i = 1; i <= 100; i++) {
-            //If the value is evenly divisible by both 3 and 5, print "FizzBuzz"
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzz");
-            }
-            //If the value is evenly divisible by 3, print "Fizz"
-            else if (i % 3 == 0) {
+    static void fizzBuzz() {
+
+        for (int i = 1; i <= 100; i++) {
+
+            if (i % 3 == 0 && i % 5 != 0) {
                 System.out.println("Fizz");
             }
-            //If the value is evenly divisible by 5, print "Buzz"
-            else if (i % 5 == 0) {
+            else if (i % 5 == 0 && i % 3 != 0) {
                 System.out.println("Buzz");
             }
-            //Otherwise, print the number
-            else {
+            else if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else {
                 System.out.println(i);
             }
         }

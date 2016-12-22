@@ -5,34 +5,38 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        probOne();
-        System.out.println(Arrays.toString(probTwo(15)));
+        fizzBuzz();
+        System.out.println("****************");
+        System.out.println(Arrays.toString(fibSeq(15)));
+        System.out.println("****************");
+        System.out.println(boost(123));
     }
 
     //For each number 1-100 inclusive, print out a value based off the current number.
     //If the value is evenly divisible by 3, print "Fizz"
-    public static void probOne() {
+    public static void fizzBuzz() {
 
         for (Integer i = 1; i <= 100; i++) {
-
-            if (i % 3 == 0) {
+            //If the value is evenly divisible by both 3 and 5, print "FizzBuzz"
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            }
+            //If the value is evenly divisible by 3, print "Fizz"
+            else if (i % 3 == 0) {
                 System.out.println("Fizz");
             }
             //If the value is evenly divisible by 5, print "Buzz"
             else if (i % 5 == 0) {
                 System.out.println("Buzz");
             }
-            //If the value is evenly divisible by both 3 and 5, print "FizzBuzz"
-            else if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzz");
-                //Otherwise, print the number
-            } else {
+            //Otherwise, print the number
+            else {
                 System.out.println(i);
             }
         }
     }
 
-    public static int[] probTwo(int x) {
+    public static int[] fibSeq(int x) {
 
         int[] fib = new int[x];
 
@@ -47,9 +51,27 @@ public class Main {
         }
         return fib;
     }
-   // public static int probTres(int x) {
-   // }
 
+    public static int boost(int input) {
+        String n = Integer.toString(input);
+        int[] digit = new int[n.length()];
+
+        for(int i = (n.length()-1); i >= 0; i--){
+            digit[i] = input % 10;
+            input = input / 10;
+
+            if (digit[i] == 9) {
+                digit[i] = 0;
+            } else {
+                digit[i] += 1;
+            }
+        }
+        n = "";
+        for (Integer number : digit) {
+            n = n + number;
+        }
+            return Integer.valueOf(n);
+    }
 }
 
 

@@ -11,8 +11,18 @@ public class MainTest {
 
     @Test
     public void boostWorks() throws Exception {
-        assertEquals(53, Increment.boost(42));
-        assertEquals(2990, Increment.boost(3001));
-        assertEquals(0, Increment.boost(999999));
+        assertEquals(678, Main.boost(567));
+    }
+
+    @Test
+    public void fizzBuzzWorks() throws Exception {
+        assertEquals("FizzBuzz", Main.fizzBuzz("15"));
+        assertEquals("Fizz", Main.fizzBuzz("9"));
+        assertEquals("Buzz", Main.fizzBuzz("20"));
+    }
+
+    @Test
+    public void fibWorks() throws Exception {
+        assertEquals(21, Main.fibb(8));
     }
 }
